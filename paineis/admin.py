@@ -9,9 +9,13 @@ from .models import Counter
 
 
 class CounterCreateAdmin(admin.ModelAdmin):
-    list_display = ['quantities', 'date', 'values_to_receive', 'total', 'total_to_receive']
+    list_display = ['quantities', 'date', 'values_to_receive', 'total', 'total_to_receive', 'author']
     form = CounterCreateForm
     list_filter = ['date']
+
+
+
+
 
 '''
 class PerfilCreateAdmin(admin.ModelAdmin):

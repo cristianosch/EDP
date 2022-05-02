@@ -2,7 +2,7 @@ from operator import add
 from django.shortcuts import render, redirect
 from paineis.forms import CounterCreateForm
 from typing import Counter
-from .models import Counter, Quantities
+from .models import Counter
 from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from .forms import CounterCreateForm
@@ -19,7 +19,7 @@ def home(response):
     form = 'Welcome this is the Home Page'
     add_panel = 'Adicionar Paineis'
     total = 'Total de Paineis'
-    values = 'Total a receber'
+    values = 'Total a receber' 
     paineis = 'Paineis e dias'
     context = {
         'title': title,
@@ -63,17 +63,17 @@ def add_panel(request):
     return render(request,'add_panel.html', context) 
 
 
-
 @login_required
-def total_a_receber(request):
-    form = CounterCreateForm(request.POST or None)
-    if form.is_valid():
+def total_a_receber(request):  
+    form = CounterCreateForm(request.POST or None)       
+    if form.is_valid():      
+        instance.value = instance.total_to_receive  
         instance = form.save(commit=False)        
-        instance.values = instance.total_to_receive        
-
-    
     return render(request, 'total_a_receber.html')
 
+
+
+    
 
 
 
