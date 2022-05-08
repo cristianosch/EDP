@@ -15,20 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from paineis import views
 from django.conf.urls.static import static
 from django.urls import include
 from django.contrib.auth import views as auth_views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),  
-    path('', views.home, name='home'),
-    path('quantity/', views.quantity, name='quantity'),    
-    path('add_panel/', views.add_panel, name='add_panel'),  
-    path('total_a_receber/', views.total_a_receber, name='total_a_receber'), 
-    path('accounts/', include('registration.backends.default.urls')),   
-    path('acconts/login', auth_views.LoginView.as_view(), name='login'), 
-    path('accounts/', include('registration.backends.default.urls')),
-    path('acconts/logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('', include('paineis.urls')), 
+    #path('accounts/', include('django.contrib.auth.urls')),      
+    path('acconts/login', auth_views.LoginView.as_view(), name='login'),    
+    path('acconts/logout/', auth_views.LogoutView.as_view(), name='logout'),    
 ]
 

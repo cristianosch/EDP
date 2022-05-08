@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(37, 84, 122);
+    background-color: rgb(15, 49, 76);
 }
 
 .table{
@@ -8,6 +8,11 @@ body{
     width: 95%;
     margin: auto;
     text-align: center;    
+    color:#145fa0;
+}
+
+form{
+    color:#145fa0;
 }
 
 .table tr:nth-child(odd){
@@ -15,7 +20,7 @@ body{
 }
 
 th{
-    background-color: #337ab7;
-    color:white;
+    background-color: #145fa0;
+    color:black;
 }
 

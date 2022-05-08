@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" style="color:red" href="/">EDP</a>
+<nav class="navbar navbar-expand-md py-1 navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand m-2" style="color:red" href="/">EDP</a>
     <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>--> 
     
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto m-3">
         <li class="nav-item active">
-          <a class="nav-link" href="/"> Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/"> Home <span class="sr-only"></span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/quantity">Paineis/Datas</a>
@@ -15,7 +15,7 @@
           <a class="nav-link" href="/add_panel">Adicionar Paineis</a>
         </li>
       </ul>        
-      <ul class="navbar-nav">
+      <ul class="navbar-nav ">
           {% if request.user.is_authenticated %}
           <li><a href="/acconts/logout"><button class="btn btn-danger">{{ user }} | Logout </button></a></li>
           {% else %}

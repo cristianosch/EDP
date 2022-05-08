@@ -7,14 +7,17 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.db.models import Sum
 from .forms import CounterCreateForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
-# Create your views here.
+
+
+
 
 
 @login_required
-def home(response):   
+def home(request):   
     title ='Bem vindo a pagina'
     form = 'Welcome this is the Home Page'
     add_panel = 'Adicionar Paineis'
@@ -30,12 +33,12 @@ def home(response):
         'paineis': paineis,
     }
     
-    return render(response, 'home.html',context)
+    return render(request, 'home.html',context)
 
 
 
 @login_required
-def quantity(response):         
+def quantity(request):         
     title = 'Quantidade de Paineis'
     queryset = Counter.objects.all()     
     context = {
@@ -43,7 +46,7 @@ def quantity(response):
         'queryset': queryset,                    
     }  
 
-    return render(response,'quantity.html', context)  
+    return render(request,'quantity.html', context)  
 
 @login_required
 def add_panel(request):       
